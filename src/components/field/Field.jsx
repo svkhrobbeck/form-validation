@@ -1,7 +1,11 @@
 import "./Field.scss";
 import { useState } from "react";
 
-export default function Field({ props }) {
+export default function Field({
+  type = "email",
+  isPassword = false,
+  placeholder = "Email",
+}) {
   const [error, setError] = useState("");
   const [isValid, setIsValid] = useState(true);
 
@@ -49,11 +53,11 @@ export default function Field({ props }) {
   return (
     <div className="field">
       <label className="field__label">
-        <span className="field__label-inner">{props.placeholder}</span>
+        <span className="field__label-inner">{placeholder}</span>
         <input
           className={`field__input ${isValid && "field__input--valid"}`}
-          type={props.type}
-          placeholder={props.placeholder}
+          type={type}
+          placeholder={placeholder}
           autoComplete="off"
           onChange={handleChange}
         />
