@@ -1,4 +1,4 @@
-import Field from "../field/FIeld";
+import Field from "../field/Field";
 import "./Form.scss";
 
 export default function Form() {
